@@ -10,6 +10,8 @@ let apiKey = apiFile["key"];
 let port = 8000;
 let hostname = "localhost"
 
+app.use(express.static("public_html"));
+
 app.get("/", function (req, res) {
 	let zip = 19104;
 	axios.get(`https://api.openweathermap.org/data/2.5/weather?zip=${zip}&appid=${apiKey}`).then(function (response) {
